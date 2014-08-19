@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<!--[if IE 10]><html class="ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+     <% include partials/head.ejs %>
+
+</head>
+<body>
+    <% include partials/header.ejs %>
+
+
+
+
+
+<h1>Properties List</h1>
+
+<input id="autocomplete" />
+<ul id="acResult">
+</ul>
+
+
+<script>
+
+$( "#autocomplete" ).keyup(function() {
+  
+   var search = $('#autocomplete').val();
+   $.ajax({url:"/properties/autocomplete/" + search,
+        success:function(result){
+            var resultHtml = "";
+
+            result.forEach(function(phone,i){
+                resultHtml += "<li>"+phone+"</li>";
+            });
+
+
+            $('#acResult').html(resultHtml);
+  }});
+});
+
+
+
+
+</script>
+
+<table class="table table-hover table-striped table-condensed table-bordered propertyListTable">
+    <thead>
+        <tr>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </ar>
+    </thead>
+    <tbody>
+
+    <%
+    properties.forEach(function(property, index){
+        %>
+
+        <tr>
+            <td><%= property.address %></td>
+            <td><%= property.phone %></td>
+            <td><%= property.rating %></td>
+            <td>
+                <a href="/properties/edit/<%= index %>" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil"></span> edit</a>
+                <a href="/properties/delete/<%= index %>" class="btn btn-xs btn-danger deleteList"><span class="glyphicon glyphicon-remove"></span>delete</a>
+                <a href="/properties/view/<%=index %>" class="btn btn-primary btn-xs">
+                <span class="glyphicon glyphicon-search"></span>
+                view
+                </a>
+            </td>
+        </tr>
+
+
+
+        <%
+    });
+     %>
+     </tbody>
+
+
+
+</table>
+
+
+
+ <% include partials/footer.ejs %>
+</body>
+
+
+
+
+
+

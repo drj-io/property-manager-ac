@@ -1,0 +1,122 @@
+
+/* #1 */
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+#container {
+    display: flex;
+    flex: auto;
+    height: 100vh;
+    flex-flow: column;
+    align-items: center;
+    opacity:0;
+    transition: all .75s linear;
+}
+
+.edit {
+    justify-content: center;
+}
+
+.edit form {
+    width: auto;
+}
+
+.edit form .input-group label {
+    width: 120px;
+    padding-right: 1em;
+    text-align: right;
+}
+
+.edit form .input-group input {
+    width: 250px;
+}
+
+.edit form .input-group:last-child {
+    text-align: right;
+}
+
+.edit form .input-group:last-child input {
+    width: auto;
+}
+
+body.loaded #container {
+    opacity: 1;
+}
+
+body.loaded.leaving #container {
+    opacity: 0;
+}
+
+#loginbox {
+    /*padding-top: 200px;
+    width: 500px;
+    margin: auto;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-flow: row;
+}
+
+form {
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 0.5em;
+}
+
+.input-group:last-child {
+    width: 100%;
+}
+
+
+.footer {
+    /*margin-top: 30px;*/
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex: auto;
+    font-size: .8em;
+}
+
+
+
+table.table {
+    width: auto;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+label { width: 200px;}
+
+.viewHeader {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.viewHeader h1 {
+    margin: 10px 0;
+}
+
+#map-canvas {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+
+#autocomplete { }

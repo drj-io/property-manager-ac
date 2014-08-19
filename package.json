@@ -1,0 +1,25 @@
+{
+  "name": "property-manager",
+  "version": "0.0.0",
+  "description": "property-manager ================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/drj-io/property-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drj-io/property-manager/issues"
+  },
+  "homepage": "https://github.com/drj-io/property-manager",
+  "dependencies": {
+    "body-parser": "^1.6.3",
+    "ejs": "^1.0.0",
+    "express": "^4.8.3",
+    "express-session": "^1.7.5"
+  }
+}

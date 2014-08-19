@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body>
+    <% include partials/header.ejs %>  
+    
+    
+        <% if (propertyId >= 0) { %>
+                <h1>Edit Property</h1>
+                <form action="/properties/edit/<%= propertyId%>" method="post" id="propForm" class="well">
+                <%}
+            else {%>
+                 <h1>Add Property</h1>
+                 <form action="/properties/create" method="post" id="propForm" class="well">
+            <% } %>
+
+         
+  
+        <div class="input-group">
+            <label>Address</label>
+            <!--<input name="address" -->
+                <!--<% if (propertyId >= 0) { %>-->
+                    <!--value="<%= property.address %>"   -->
+                <!--<%}%>-->
+            <!--/>-->
+            <textarea name="address" id="address" cols="38" rows="3"><% if (propertyId >= 0) {%><%= property.address %><%} %>
+            </textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input name="phone"  
+                <% if (propertyId >= 0) { %>
+                    value="<%= property.phone %>"   
+                <%}%>
+
+            />
+        </div>
+        <div class="input-group">
+            <label>Rating</label>
+            <input name="rating"
+                  <% if (propertyId >= 0) { %>
+                    value="<%= property.rating %>"   
+                <%}%>
+            />
+        </div>
+        <div class="input-group">
+            <input type="submit" style="text-align: center" class="btn btn-primary">
+        </div>
+    </form>
+  
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

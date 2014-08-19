@@ -1,0 +1,25 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if IE 10]>
+<html class="ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+    <% include partials/head.ejs %>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="/js/geocoder.js"></script>
+</head>
+<body>
+<% include partials/header.ejs %>
+
+<div class="viewHeader">
+    <h1>Property View</h1>
+    <p>
+        <strong>Street Address: </strong><span id="straddr"><%= property.address %></span>
+    </p>
+</div>
+
+<div id="map-canvas"></div>
+
+<% include partials/footer.ejs %>
+</body>
